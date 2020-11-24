@@ -1,17 +1,18 @@
-import react from 'react';
-import ListaDeDespesas from './components/ListaDeDespesas';
+import React, { Component } from 'react';
+import ExpenseList from './components/ExpenseList';
+import CreateExpenseForm from './components/CreateExpenseForm';
+import "./styles/global.css";
+import "./styles/App.css";
 
-function App() {
-  return (
-    <section>
-      <form action="">
-        <input type="text" placeholder="Título"/>
-        <textarea name="" id="" cols="30" rows="10" placeholder="Escreva sua Despesa..."></textarea>
-        <button>Criar nota</button>
-      </form>
-      <ListaDeDespesas />
-    </section>
-  );
+class App extends Component {
+  render() {
+    return (
+      <section className="app">
+        <CreateExpenseForm />
+        <ExpenseList />
+      </section>
+    );
+  }
 }
 
 export default App;

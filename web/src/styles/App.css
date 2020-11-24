@@ -1,0 +1,11 @@
+.app {
+  display: flex;
+}
+
+:root {
+  --primary: #58a4b0;
+  --secondary: #373f51;
+  --secondary-active: #cccccc;
+  --background: #fff;
+  --background-details: #ececec;
+}
