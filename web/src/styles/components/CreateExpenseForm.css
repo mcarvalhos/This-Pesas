@@ -1,34 +1,47 @@
 .create-expense-form {
-flex-grow: 2;
-box-shadow: 0 0 4px rgba(0, 0, 0, 0.3);
-z-index: 1;
-min-height: 100vh;
-display: flex;
-flex-direction: column;
-padding: 12px 40px;
+  flex-grow: 2;
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.3);
+  border-right: 2px dashed #e33f8f;
+  z-index: 1;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  padding: 12px 40px;
+
+ /* wih dorm fixed */
+  position: fixed;
+  background-color: rgba(0, 0, 0, 0.3);
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+
+  height: 100%;
 }
 
 .form-create_input {
-  margin-top: 8px;
-  padding: 4px;
+  border-radius: 5px;
+  padding: 10px;
+  margin-top: 16px;
   border: none;
   background-color: var(--background-details);
-  font-family: ubuntu, monospace;
+  font-family: Arial, Helvetica, sans-serif;
   font-weight: 100;
 }
 
-.create-expense-form button {
-  align-self: flex-end;
-  width: 40%;
+/* .form-create_date {
+  color: grey;
+} */
 
-  background-color: var(--secondary);
-  color: white;
+
+.form-create_submit {
+  width: 100%;
+  padding: 16px 0;
+  border-radius: 5px;
   font-weight: 400;
-
-  border-radius: 15px;
+  align-self: center;
+  
+  color: white;
+  background-color: var(--secondary);
 }
 
-.create-expense-form button:active {
+.form-create_submit:active {
   background-color: var(--secondary-active);
-} 
-
+}

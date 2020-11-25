@@ -1,0 +1,28 @@
+.card-expense {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+  background-color: var(--background-details);
+  border-radius: 4px;
+  flex-wrap: wrap;
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.3);
+  padding: 16px;
+}
+
+.card-expense_header {
+  font-size: 1.1em;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.card-expense_title {
+  font-size: 1.2em;
+  margin-right: 12px;
+}
+
+.card-expense_text {
+  margin-top: 8px;
+  font-size: 1em;
+}
