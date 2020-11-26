@@ -36,7 +36,8 @@ class CreateExpenseForm extends Component {
         className="create-expense-form"
         onSubmit={this._createCard.bind(this)}
       >
-        <h1 className="form-create_title"
+        <h1
+          className="form-create_title"
           style={{
             color: "#fff",
             marginTop: "24px",
@@ -44,7 +45,8 @@ class CreateExpenseForm extends Component {
             display: "flex",
             fontSize: "55px",
             fontWeight: "bold",
-            fontFamily: "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif",
+            fontFamily:
+              "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif",
           }}
         >
           THISPESAS

@@ -24,11 +24,19 @@ class App extends Component {
     this.setState(newState);
   }
 
+  deleteExpense(index) {
+    let arrayExpenses = this.state.expenses;
+    arrayExpenses.splice(index, 1);
+    this.setState({expenses: arrayExpenses});
+  }
+
   render() {
     return (
       <section className="content">
         <CreateExpenseForm createCard={this.createCard.bind(this)} />
-        <ListExpense expenses={this.state.expenses} />
+        <ListExpense
+          deleteExpense={this.deleteExpense.bind(this)}
+          expenses={this.state.expenses} />
       </section>
     );
   }

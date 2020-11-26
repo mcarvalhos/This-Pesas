@@ -8,6 +8,8 @@
   flex-wrap: wrap;
   box-shadow: 0 0 4px rgba(0, 0, 0, 0.3);
   padding: 16px;
+
+  transition-duration: 1s;
 }
 
 .card-expense_header {
@@ -15,6 +17,8 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  width: 100%;
+  color: red;
 }
 
 .card-expense_title {
