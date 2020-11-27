@@ -10,11 +10,8 @@ html {
   list-style-type: none;
   padding-left: 24px;
   padding-top: 24px;
-
-  /* width form fixed
-  */
-  margin-left: 400px; 
 }
+
 .list-expense_item {
   margin: 12px;
   max-width: 240px;

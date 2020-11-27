@@ -1,7 +1,7 @@
 .create-expense-form {
   flex-grow: 2;
   box-shadow: 0 0 4px rgba(0, 0, 0, 0.3);
-  border-right: 2px dashed #e33f8f;
+  border-right: 2px dashed var(--secondary-active);
   z-index: 1;
   min-height: 100vh;
   display: flex;
