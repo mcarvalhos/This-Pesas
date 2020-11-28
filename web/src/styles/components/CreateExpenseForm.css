@@ -8,7 +8,7 @@
   flex-direction: column;
   padding: 12px 40px;
 
- /* wih dorm fixed */
+  /* wih dorm fixed */
   position: fixed;
   background-color: rgba(0, 0, 0, 0.3);
   box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
@@ -26,10 +26,46 @@
   font-weight: 100;
 }
 
-/* .form-create_date {
-  color: grey;
-} */
+/* ----------------- DatePicker -----------------START*/
+.react-datepicker__input-container input {
+  width: 125%;
+}
+.react-datepicker-popper {
+}
+.react-datepicker .react-datepicker__triangle {
+}
+.react-datepicker .react-datepicker__triangle :before {
+}
+.react-datepicker {
+  border: none;
+  background-color: transparent;
+}
+.react-datepicker__month-container {
+  border-radius: 0.3rem;
+  background-color: var(--primary);
+}
+.react-datepicker__current-month{
+  color: var(--background-details);
+}
 
+.react-datepicker__day-name{
+  color: var(--background-details);
+}
+.react-datepicker__header {
+  background-color: var(--primary);
+  border: none;
+  color: var(--background-details);
+}
+.react-datepicker__day {
+  color: var(--background-details);
+}
+.react-datepicker__day:hover {
+  background-color: var(--secondary-active);
+}
+.react-datepicker__day--keyboard-selected {
+  background-color: var(--secondary-active);
+}
+/* ----------------- DatePicker -----------------END*/
 
 .form-create_submit {
   width: 100%;
@@ -37,7 +73,7 @@
   border-radius: 5px;
   font-weight: 400;
   align-self: center;
-  
+
   color: white;
   background-color: var(--secondary);
 }

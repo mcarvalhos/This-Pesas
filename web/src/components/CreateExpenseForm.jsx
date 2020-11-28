@@ -1,4 +1,6 @@
 import React, { Component } from "react";
+import DatePicker from "../components/DatePicker";
+
 import "../styles/components/CreateExpenseForm.css";
 
 class CreateExpenseForm extends Component {
@@ -22,29 +24,6 @@ class CreateExpenseForm extends Component {
   _handleChangeDate(event) {
     event.stopPropagation();
     this.date = event.target.value;
-  }
-
-  _handleGetDate(event) {
-    event.stopPropagation();
-    this.date = event.target.value;
-    const d = new Date(this.date);
-    const month = new Array();
-    month[0] = "January";
-    month[1] = "February";
-    month[2] = "March";
-    month[3] = "April";
-    month[4] = "May";
-    month[5] = "June";
-    month[6] = "July";
-    month[7] = "August";
-    month[8] = "September";
-    month[9] = "October";
-    month[10] = "November";
-    month[11] = "December";
-
-    const n = month[d.getMonth()];
-
-    console.log(n);
   }
 
   _createCard(event) {
@@ -99,16 +78,17 @@ class CreateExpenseForm extends Component {
           required
           onChange={this._handleChangeValue.bind(this)}
         />
-        <input
+        {/* <input
           type="date"
           // value="2000-01-01"
-          className="form-create_input"
           placeholder="dd-mm-yyyy"
           required
           className="form-create_input form-create_date"
           onChange={this._handleChangeDate.bind(this)}
-          onChange={this._handleGetDate.bind(this)}
-        />
+        /> */}
+
+        <DatePicker onChange={this._handleChangeDate.bind(this)} />
+
         <button className="form-create_input form-create_submit">Salvar</button>
       </form>
     );

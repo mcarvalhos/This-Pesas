@@ -10,15 +10,15 @@
 }
 
 :root {
-  --primary: #58a4b0;
+  /* --primary: #58a4b0;
   --secondary: #373f51;
   --secondary-active: #cccccc;
   --background: #fff;
-  --background-details: #ececec;
+  --background-details: #ececec; */
 
-  /* --primary: #47307d;
+  --primary: #47307d;
   --secondary-active: #e33f8f;
   --secondary: #ee5c9c;
   --background: #382b70;
-  --background-details: #f0f0f0; */
+  --background-details: #f0f0f0;
 }
