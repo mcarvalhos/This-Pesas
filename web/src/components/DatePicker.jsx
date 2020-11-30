@@ -9,7 +9,7 @@ export default function TableDatePicker() {
   console.log("startDate: ", startDate);
   return (
     <div>
-      <DatePicker
+      <DatePicker 
         selected={startDate}
         placeholderText="Vencimento"
         onChange={(date) => setStartDate(date)}
