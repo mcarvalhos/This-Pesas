@@ -9,6 +9,7 @@ class CreateExpenseForm extends Component {
     this.title = "";
     this.value = "";
     this.date = "";
+    this.category = "Sem categoria";
   }
 
   _handleChangeTitle(event) {
@@ -29,7 +30,7 @@ class CreateExpenseForm extends Component {
   _createCard(event) {
     event.preventDefault();
     event.stopPropagation();
-    this.props.createCard(this.title, this.value, this.date);
+    this.props.createCard(this.title, this.value, this.date, this.category);
   }
 
   render() {
@@ -88,6 +89,13 @@ class CreateExpenseForm extends Component {
         /> */}
 
         <DatePicker onChange={this._handleChangeDate.bind(this)} />
+
+        <select className="select-test">
+          <option defaultChecked={true}>Sem categoria</option>
+          {this.props.categories.map((category) => {
+            return <option key={category}>{category}</option>;
+          })}
+        </select>
 
         <button className="form-create_input form-create_submit">Salvar</button>
       </form>

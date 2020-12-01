@@ -6,7 +6,7 @@ import "../styles/components/CreateExpenseForm.css";
 
 export default function TableDatePicker() {
   const [startDate, setStartDate] = useState(null);
-  console.log("startDate: ", startDate);
+  // console.log("startDate: ", startDate);
   return (
     <div>
       <DatePicker

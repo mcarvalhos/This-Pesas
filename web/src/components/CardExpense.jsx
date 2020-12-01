@@ -1,10 +1,9 @@
 import React, { Component } from "react";
 import "../styles/components/CardExpense.css";
 import { ReactComponent as DeleteSVG } from "../images/delete.svg";
-import { ReactComponent as PaidSVG } from "../images/like.svg";
+// import { ReactComponent as PaidSVG } from "../images/like.svg";
 class CardExpense extends Component {
-
-  delete(){
+  delete() {
     const index = this.props.index;
     this.props.deleteExpense(index);
   }
@@ -23,7 +22,8 @@ class CardExpense extends Component {
           <DeleteSVG
             className="card-expense_delete"
             onClick={this.delete.bind(this)}
-          />
+            />
+            <h4>{this.props.category}</h4>           
         </header>
         <p className="card-expense_text"> Valor: R${this.props.value}</p>
         <p className="card-expense_text"> Vencimento: {this.props.date}</p>

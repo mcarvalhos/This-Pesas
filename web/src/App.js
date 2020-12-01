@@ -17,8 +17,8 @@ class App extends Component {
     };
   }
 
-  createCard(title, value, date) {
-    const newExpense = { title, value, date };
+  createCard(title, value, date, category) {
+    const newExpense = { title, value, date, category };
     const newArrayExpense = [...this.state.expenses, newExpense]
     const newState = {
       expenses: newArrayExpense

@@ -15,6 +15,7 @@ class ListExpense extends Component {
                 title={expense.title}
                 value={expense.value}
                 date={expense.date}
+                category={expense.category}
               />
             </li>
           );
