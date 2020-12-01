@@ -79,16 +79,16 @@ class CreateExpenseForm extends Component {
           required
           onChange={this._handleChangeValue.bind(this)}
         />
-        {/* <input
+        <input
           type="date"
           // value="2000-01-01"
           placeholder="dd-mm-yyyy"
           required
           className="form-create_input form-create_date"
           onChange={this._handleChangeDate.bind(this)}
-        /> */}
+        />
 
-        <DatePicker onChange={this._handleChangeDate.bind(this)} />
+        {/* <DatePicker /> */}
 
         <select className="select-test">
           <option defaultChecked={true}>Sem categoria</option>
