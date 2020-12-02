@@ -88,7 +88,7 @@ class CreateExpenseForm extends Component {
           onChange={this._handleChangeDate.bind(this)}
         />
 
-        {/* <DatePicker /> */}
+        <DatePicker />
 
         <select className="select-test">
           <option defaultChecked={true}>Sem categoria</option>
