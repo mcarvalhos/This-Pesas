@@ -14,7 +14,6 @@ export default function TableDatePicker() {
         placeholderText="Vencimento"
         onChange={(date) => setStartDate(date)}
         className="form-create_input form-create_date"
-        calendarClassName="rasta-stripes"
       />
     </div>
   );

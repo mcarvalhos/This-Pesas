@@ -16,7 +16,7 @@ class ListCategories extends Component {
   render() {
     return (
       <section className="category-list">
-        <select
+        {/* <select
           className="category-list_select"
           onChange={this._handleCategorySelected.bind(this)}
         >
@@ -27,7 +27,7 @@ class ListCategories extends Component {
               </option>
             );
           })}
-        </select>
+        </select> */}
       </section>
     );
   }

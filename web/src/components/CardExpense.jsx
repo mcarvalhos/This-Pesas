@@ -21,11 +21,11 @@ class CardExpense extends Component {
           <h3 className="card-expense_title">{this.props.title}</h3>
           <DeleteSVG
             className="card-expense_delete"
-            onClick={this.delete.bind(this)}
+            onClick={this.delete.bind(this)}        
             />
-            <h4>{this.props.category}</h4>           
+            {/* <h4>{this.props.category}</h4>            */}
         </header>
-        <p className="card-expense_text"> Valor: R${this.props.value}</p>
+        <p className="card-expense_text"> Valor: R$ {this.props.value}</p>
         <p className="card-expense_text"> Vencimento: {this.props.date}</p>
       </section>
     );

@@ -22,9 +22,23 @@ class CreateExpenseForm extends Component {
     this.value = event.target.value;
   }
 
+  _handleConvertValue(event) {
+    this.value = event.target.value;
+    let currentValue = this.value;
+    
+    let f = currentValue.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'});
+  }
+
   _handleChangeDate(event) {
     event.stopPropagation();
     this.date = event.target.value;
+  }
+
+  _formatDate(date) {
+    var dateControl = document.querySelector('input[type="date"]');
+    window.setInterval(() => {
+      dateControl.value = "2017-06-01";
+    })
   }
 
   _createCard(event) {
@@ -78,24 +92,25 @@ class CreateExpenseForm extends Component {
           className="form-create_input"
           required
           onChange={this._handleChangeValue.bind(this)}
+          onChange={this._handleConvertValue.bind(this)}
         />
         <input
           type="date"
           // value="2000-01-01"
-          placeholder="dd-mm-yyyy"
+          placeholdert="Vencimento"
           required
           className="form-create_input form-create_date"
           onChange={this._handleChangeDate.bind(this)}
         />
 
-        <DatePicker />
+        {/* <DatePicker />
 
         <select className="select-test">
           <option defaultChecked={true}>Sem categoria</option>
           {this.props.categories.map((category) => {
             return <option key={category}>{category}</option>;
           })}
-        </select>
+        </select> */}
 
         <button className="form-create_input form-create_submit">Salvar</button>
       </form>

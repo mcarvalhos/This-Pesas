@@ -26,6 +26,14 @@
   font-weight: 100;
 }
 
+/* .form-create_date:required:invalid::-webkit-datetime-edit {
+    color: transparent;
+}
+.form-create_date::focus::-webkit-datetime-edit {
+  color: black !important;
+} */
+
+
 /* ----------------- DatePicker -----------------START*/
 .react-datepicker__input-container input {
   width: 125%;
