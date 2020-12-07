@@ -1,5 +1,9 @@
 import React, { Component } from "react";
-import DatePicker from "../components/DatePicker";
+// import DatePicker from "../components/DatePicker";
+
+import { FiArrowDownCircle, FiArrowUpCircle } from "react-icons/fi";
+
+import logoImg from "../images/logo.svg";
 
 import "../styles/components/CreateExpenseForm.css";
 
@@ -7,9 +11,13 @@ class CreateExpenseForm extends Component {
   constructor(props) {
     super(props);
     this.title = "";
-    this.value = "";
+    this.cost = "";
     this.date = "";
     this.category = "Sem categoria";
+  }
+  _handleChangeCategory(event) {
+    event.stopPropagation();
+    this.category = event.target.value;
   }
 
   _handleChangeTitle(event) {
@@ -17,16 +25,9 @@ class CreateExpenseForm extends Component {
     this.title = event.target.value;
   }
 
-  _handleChangeValue(event) {
+  _handleChangeCost(event) {
     event.stopPropagation();
-    this.value = event.target.value;
-  }
-
-  _handleConvertValue(event) {
-    this.value = event.target.value;
-    let currentValue = this.value;
-    
-    let f = currentValue.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'});
+    this.cost = event.target.value;
   }
 
   _handleChangeDate(event) {
@@ -38,82 +39,102 @@ class CreateExpenseForm extends Component {
     var dateControl = document.querySelector('input[type="date"]');
     window.setInterval(() => {
       dateControl.value = "2017-06-01";
-    })
+    });
   }
 
   _createCard(event) {
     event.preventDefault();
     event.stopPropagation();
-    this.props.createCard(this.title, this.value, this.date, this.category);
+    this.props.createCard(this.title, this.cost, this.date, this.category);
   }
 
   render() {
+    const costAllExpenses = this.props.expenses.map((expense, index) =>
+      parseFloat(expense.cost)
+    );
+    const resultAllExpenses = costAllExpenses.reduce((a, b) => a + b, 0);
+
     return (
-      <form
-        className="create-expense-form"
-        onSubmit={this._createCard.bind(this)}
-      >
-        <h1
-          className="form-create_title"
-          style={{
-            color: "#fff",
-            marginTop: "24px",
-            justifyContent: "center",
-            display: "flex",
-            fontSize: "55px",
-            fontWeight: "bold",
-            fontFamily:
-              "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif",
-          }}
-        >
-          THISPESAS
-        </h1>
-        <img
-          style={{
-            alignSelf: "center",
-            marginBottom: "16px",
-            marginTop: "24px",
-          }}
-          width="250"
-          height="150px"
-          src="https://www.flaticon.com/svg/static/icons/svg/2037/2037184.svg"
-        />
+      <div id="page-aplication">
+        <aside>
+          <header>
+            <img src={logoImg} className="logo-img_form" alt="" />
 
-        <input
-          type="text"
-          placeholder="Descrição da Despesa"
-          className="form-create_input"
-          required
-          onChange={this._handleChangeTitle.bind(this)}
-        />
-        <input
-          type="number"
-          placeholder="Valor R$"
-          className="form-create_input"
-          required
-          onChange={this._handleChangeValue.bind(this)}
-          onChange={this._handleConvertValue.bind(this)}
-        />
-        <input
-          type="date"
-          // value="2000-01-01"
-          placeholdert="Vencimento"
-          required
-          className="form-create_input form-create_date"
-          onChange={this._handleChangeDate.bind(this)}
-        />
+            {/* <img
+              style={{
+                alignSelf: "center",
+                marginBottom: "16px",
+                marginTop: "24px",
+              }}
+              width="250"
+              height="150px"
+              src="https://www.flaticon.com/svg/static/icons/svg/2037/2037184.svg"
+              alt=""
+            /> */}
+          </header>
 
-        {/* <DatePicker />
+          <main>
+            <form
+              className="create-expense-form"
+              onSubmit={this._createCard.bind(this)}
+            >
+              <select
+                onChange={this._handleChangeCategory.bind(this)}
+                className="form-create_input form-create_select"
+              >
+                <option defaultChecked={true}>Sem categoria</option>
+                {this.props.categories.map((category) => {
+                  return <option key={category}>{category}</option>;
+                })}
+              </select>
 
-        <select className="select-test">
-          <option defaultChecked={true}>Sem categoria</option>
-          {this.props.categories.map((category) => {
-            return <option key={category}>{category}</option>;
-          })}
-        </select> */}
+              <input
+                type="text"
+                placeholder="Descrição da Despesa"
+                className="form-create_input"
+                required
+                onChange={this._handleChangeTitle.bind(this)}
+              />
+              <input
+                type="number"
+                placeholder="Valor R$"
+                className="form-create_input"
+                required
+                onChange={this._handleChangeCost.bind(this)}
+              />
+              <input
+                type="date"
+                // value="2000-01-01"o
+                placeholdert="Vencimento"
+                required
+                className="form-create_input form-create_date"
+                onChange={this._handleChangeDate.bind(this)}
+              />
 
-        <button className="form-create_input form-create_submit">Salvar</button>
-      </form>
+              {/*
+              <DatePicker />
+
+              */}
+
+              <button className="form-create_input form-create_submit">
+                Salvar
+              </button>
+            </form>
+          </main>
+          <footer>
+            <FiArrowUpCircle size={34} color="#76e749" />
+            <div className="footer-wallet">
+              <h3 className="footer-title">Saldo</h3>
+              <p>R$2000</p>
+            </div>
+            <FiArrowDownCircle size={34} color="#ff4500" />
+            <div className="footer-expense">
+              <h3 className="footer-title">Despesas</h3>
+              <p>R${resultAllExpenses}</p>
+            </div>
+          </footer>
+        </aside>
+      </div>
     );
   }
 }

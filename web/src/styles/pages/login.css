@@ -1,0 +1,229 @@
+#page-login{
+  width: 100vw;
+  height: 100vh;
+  background: linear-gradient(178deg, #772e99 0%, #382b70 100%);
+  display: flex;
+}
+
+#page-login .login-panel {
+  width: 65vw;
+  height: 100vh;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+#page-login .login-location {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: 800;
+  font-size: 24px;
+  line-height: 34px;
+
+  text-align: center;
+
+  color: #FFFFFF;
+}
+
+#page-login .login-form-wrapper {
+ display: flex;
+  width: 35vw;
+  height: 100vh;
+
+  background: #47307D;
+  /* Secondary */
+  
+  border-left: 2px dashed #EE5C9C;
+  box-sizing: border-box;
+
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+div.login-form-wrapper header a,
+div.login-form-wrapper header button {
+  position: absolute;
+  
+  top: 0;
+  right: 0;
+
+  margin-top: 50px;
+  margin-right: 50px;
+  
+  width: 50px;
+  height: 50px;
+  border: 0;
+  background: #382b70;
+  border-radius: 16px;
+
+  cursor: pointer;
+  transition: background-color 0.2s;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+div.login-form-wrapper header a:hover,
+div.login-form-wrapper header button:hover {
+  background: #ee5c9c;  
+  color: #fff!important;
+}
+
+#page-login .login-form-wrapper .login-form {
+  width: 70%;
+  height: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+#page-login .login-form-wrapper .login-form legend {
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 32px;
+  line-height: 34px;
+
+  color: var(--background-details);
+}
+
+#page-login .login-form-wrapper .login-form .div-input-login {
+  height: 40%;
+  display: flex;
+  flex-direction:column;
+  justify-content: space-between;
+}
+
+#page-login .login-form-wrapper .login-form label {
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 22px;
+
+  color: var(--background-details);
+}
+
+#page-login .login-form-wrapper .login-form .input-login input { 
+  width: 100%;
+  height: 64px;
+  padding: 0px 25px;
+
+  background: var(--background-details);
+  border: 1px solid var(--secondary);
+  box-sizing: border-box;
+  border-radius: 20px;
+
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 22px;
+  color:#3e4347;
+  outline:none;
+}
+
+#page-login .login-form-wrapper .login-form .input-login input:focus { 
+  border: 1px solid #e33f8f;
+}
+
+#page-login .login-form-wrapper .login-form .login-options {
+  display: flex;
+
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: space;
+  box-sizing: border-box;
+}
+
+#page-login .login-form-wrapper .login-form .login-options .div-remember-checkbox {
+  width: 25%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+#page-login .login-form-wrapper .login-form .login-options .div-remember-checkbox .remember-login-checkbox[type="checkbox"] {
+  appearance: none;
+  width: 24px;
+  height: 24px;
+  background: #F5F8FA;
+  border: 1px solid #D3E2E5;
+  box-sizing: border-box;
+  border-radius: 8px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#page-login .login-form-wrapper .login-form .login-options .div-remember-checkbox label {
+  cursor: pointer;
+}
+
+#page-login .login-form-wrapper .login-form .login-options .div-remember-checkbox .remember-login-checkbox[type="checkbox"]:after {
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  content: "\f00c";
+  color: #F5F8FA;
+  font-size: 18px;
+  display: none;
+}
+
+#page-login .login-form-wrapper .login-form .login-options .div-remember-checkbox .remember-login-checkbox[type="checkbox"]:checked {
+  background: #37C77F;
+  border: 2px solid #37C77F;
+  box-sizing: border-box;
+  border-radius: 8px;
+}
+
+#page-login .login-form-wrapper .login-form .login-options .div-remember-checkbox .remember-login-checkbox[type="checkbox"]:focus {
+  outline: none;
+}
+#page-login .login-form-wrapper .login-form .login-options .div-remember-checkbox .remember-login-checkbox[type="checkbox"]:after {
+  display: block;
+}
+
+
+#page-login .login-form-wrapper .login-form .login-options .recovery-login{
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 22px;
+
+  color: var(--background-details);
+  text-decoration: none;
+}
+
+#page-login .login-form-wrapper .login-form .confirm-login-button {
+  height: 64px;
+  opacity: 0.5;
+
+  background: #ee5c9c;
+  border-radius: 20px;
+  border: none;
+
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 22px;
+  text-align: center;
+  color: #FFFFFF;
+
+  cursor: pointer;
+}
+#page-login .login-form-wrapper .login-form .confirm-login-button  .confirm-login-button_link {
+  text-decoration: none!important;
+  color: var(--background-details);
+}

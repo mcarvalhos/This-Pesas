@@ -12,7 +12,7 @@ class ListExpense extends Component {
                 index={index}
                 deleteExpense={this.props.deleteExpense}
                 title={expense.title}
-                value={expense.value}
+                cost={expense.cost}
                 date={expense.date}
                 category={expense.category}
               />

@@ -1,33 +1,50 @@
 import React, { Component } from "react";
-import CreateExpenseForm from "./CreateExpenseForm";
-import CardExpense from "./CardExpense";
-import DatePicker from "./DatePicker";
 
-
-
-
+import "../styles/components/ListCategories.css";
 class ListCategories extends Component {
-  _handleCategorySelected(event) {
-    this.props.categories = event.target.value;
-
-    console.log(this.props.categories);
+  _handleEventInput(event) {
+    if (event.key === "Enter") {
+      let valueCategory = event.target.value;
+      this.props.addCategory(valueCategory);
+      event.target.value = "";
+    }
   }
-  
+  _teste(event) {
+    console.log(event.target.value);
+  }
+
   render() {
     return (
-      <section className="category-list">
-        {/* <select
-          className="category-list_select"
-          onChange={this._handleCategorySelected.bind(this)}
-        >
-          {this.props.categories.map((n, index) => {
+      <section className="list-categories">
+        <ul className="list-categories_list">
+          {this.props.categories.map((category, index) => {
             return (
-              <option key={index} className="list-categories_item">
-                {n}
-              </option>
+              <li
+                key={index}
+                className="list-categories_item"
+                onClick={this._teste}
+              >
+                {category}
+              </li>
             );
           })}
-        </select> */}
+        </ul>
+        <input
+          type="text"
+          id="listCategoriesInput"
+          className="list-categories_input "
+          placeholder="Adicionar Categoria"
+          onKeyUp={this._handleEventInput.bind(this)}
+          onInput={this._teste}
+
+        />
+         <input
+          type="text"
+          id="listCategoriesInput"
+          className="list-categories_input "
+          placeholder="Pesquisar..."
+
+        />
       </section>
     );
   }
