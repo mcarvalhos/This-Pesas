@@ -13,12 +13,14 @@ class CreateExpenseForm extends Component {
     this.title = "";
     this.cost = "";
     this.date = "";
-    this.category = "Sem categoria";
+    this.search = "";
+    // this.category = "Sem categoria";
   }
-  _handleChangeCategory(event) {
-    event.stopPropagation();
-    this.category = event.target.value;
-  }
+
+  // _handleChangeCategory(event) {
+  //   event.stopPropagation();
+  //   this.category = event.target.value;
+  // }
 
   _handleChangeTitle(event) {
     event.stopPropagation();
@@ -33,13 +35,6 @@ class CreateExpenseForm extends Component {
   _handleChangeDate(event) {
     event.stopPropagation();
     this.date = event.target.value;
-  }
-
-  _formatDate(date) {
-    var dateControl = document.querySelector('input[type="date"]');
-    window.setInterval(() => {
-      dateControl.value = "2017-06-01";
-    });
   }
 
   _createCard(event) {
@@ -60,7 +55,7 @@ class CreateExpenseForm extends Component {
           <header>
             <img src={logoImg} className="logo-img_form" alt="" />
 
-            {/* <img
+            <img
               style={{
                 alignSelf: "center",
                 marginBottom: "16px",
@@ -70,7 +65,7 @@ class CreateExpenseForm extends Component {
               height="150px"
               src="https://www.flaticon.com/svg/static/icons/svg/2037/2037184.svg"
               alt=""
-            /> */}
+            />
           </header>
 
           <main>
@@ -78,7 +73,7 @@ class CreateExpenseForm extends Component {
               className="create-expense-form"
               onSubmit={this._createCard.bind(this)}
             >
-              <select
+              {/* <select
                 onChange={this._handleChangeCategory.bind(this)}
                 className="form-create_input form-create_select"
               >
@@ -86,7 +81,7 @@ class CreateExpenseForm extends Component {
                 {this.props.categories.map((category) => {
                   return <option key={category}>{category}</option>;
                 })}
-              </select>
+              </select> */}
 
               <input
                 type="text"
