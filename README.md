@@ -1,2 +1,2 @@
 # This-Pesas
-Start of a application that you can list your 
+Start of a application that you can list your expenses
